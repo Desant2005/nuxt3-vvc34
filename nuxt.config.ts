@@ -1,5 +1,5 @@
 import { pwa } from './config/pwa'
-import { appDescription } from './constants/index'
+import { appDescription } from '~/constants'
 
 export default defineNuxtConfig({
   modules: [
@@ -18,7 +18,14 @@ export default defineNuxtConfig({
   },
   css: [
     '@unocss/reset/tailwind.css',
+    'primevue/resources/themes/saga-blue/theme.css',
+    'primevue/resources/primevue.css',
+    'primeicons/primeicons.css',
+    'primeflex/primeflex.css',
   ],
+  build: {
+    transpile: ['primevue'],
+  },
   colorMode: {
     classSuffix: '',
   },
@@ -41,6 +48,8 @@ export default defineNuxtConfig({
         { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
         { rel: 'icon', type: 'image/svg+xml', href: '/nuxt.svg' },
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat&display=swap' },
+        { rel: 'stylesheet', href: 'href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat&display=swap' },
       ],
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
